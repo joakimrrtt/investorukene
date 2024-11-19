@@ -5,30 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plinko - Smarte Finansielle Verktøy</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .hidden {
-            display: none;
-        }
-    </style>
 </head>
 <body class="bg-gray-100">
 
-    <nav class="bg-blue-600 text-white py-4">
-        <div class="container mx-auto flex justify-between items-center">
+    <!-- Navbar -->
+    <nav class="bg-blue-600 text-white">
+        <div class="container mx-auto flex items-center justify-between px-4 py-3">
             <a href="#" class="text-2xl font-bold">Plinko</a>
-            <div class="lg:hidden">
-                <button id="menu-toggle" class="text-white focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
+            <!-- Hamburger Button -->
+            <button id="menu-toggle" class="text-white lg:hidden focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <!-- Navbar Links -->
+            <div id="navbar" class="hidden lg:flex flex-col lg:flex-row lg:items-center lg:space-x-6 w-full lg:w-auto mt-4 lg:mt-0">
+                <a href="#home" class="block px-3 py-2 hover:bg-blue-700 rounded-lg">Hjem</a>
+                <a href="#news" class="block px-3 py-2 hover:bg-blue-700 rounded-lg">Kalkulatorer</a>
+                <a href="#about" class="block px-3 py-2 hover:bg-blue-700 rounded-lg">Om Oss</a>
             </div>
-            <ul id="menu" class="hidden lg:flex space-x-6">
-                <li><a href="#" class="hover:underline">Hjem</a></li>
-                <li><a href="#" class="hover:underline">Om Oss</a></li>
-                <li><a href="#" class="hover:underline">Tjenester</a></li>
-                <li><a href="#" class="hover:underline">Kontakt</a></li>
-            </ul>
         </div>
     </nav>
 
@@ -42,35 +37,50 @@
         </div>
     </header>
 
-    <section class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-12 px-4">
+<section class="container mx-auto py-12 px-4">
+    <header class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-gray-800">Våre Kalkulatorer</h2>
+        <p class="text-gray-600 mt-2">Utforsk våre nyttige verktøy for å planlegge økonomien din.</p>
+    </header>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="bg-white p-6 shadow rounded-lg text-center">
+            <img src="https://via.placeholder.com/150" alt="Sparekonto" class="mx-auto rounded mb-4">
             <h3 class="text-xl font-bold text-gray-800">Sparekonto Kalkulator</h3>
             <p class="mt-2 text-gray-600">Beregn fremtidige renter og gevinster på sparekontoen din.</p>
+            <p class="text-blue-600 font-semibold mt-4 cursor-pointer">Les mer</p>
         </div>
+        
         <div class="bg-white p-6 shadow rounded-lg text-center">
+            <img src="https://via.placeholder.com/150" alt="Boliglån" class="mx-auto rounded mb-4">
             <h3 class="text-xl font-bold text-gray-800">Boliglån Kalkulator</h3>
             <p class="mt-2 text-gray-600">Se hvor mye boliglånet ditt vil koste over tid.</p>
+            <p class="text-blue-600 font-semibold mt-4 cursor-pointer">Les mer</p>
         </div>
+        
         <div class="bg-white p-6 shadow rounded-lg text-center">
+            <img src="https://via.placeholder.com/150" alt="Forbrukslån" class="mx-auto rounded mb-4">
             <h3 class="text-xl font-bold text-gray-800">Forbrukslån Kalkulator</h3>
             <p class="mt-2 text-gray-600">Få full oversikt over hva et forbrukslån vil koste deg.</p>
+            <p class="text-blue-600 font-semibold mt-4 cursor-pointer">Les mer</p>
         </div>
+
         <div class="bg-white p-6 shadow rounded-lg text-center">
+            <img src="https://via.placeholder.com/150" alt="Pensjonssparing" class="mx-auto rounded mb-4">
             <h3 class="text-xl font-bold text-gray-800">Pensjonssparing</h3>
             <p class="mt-2 text-gray-600">Planlegg pensjonen din med våre enkle verktøy.</p>
+            <p class="text-blue-600 font-semibold mt-4 cursor-pointer">Les mer</p>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <script>
         const menuToggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('menu');
+        const navbar = document.getElementById('navbar');
 
         menuToggle.addEventListener('click', () => {
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-            } else {
-                menu.classList.add('hidden');
-            }
+            navbar.classList.toggle('hidden');
         });
     </script>
 </body>
