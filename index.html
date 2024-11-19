@@ -8,29 +8,43 @@
     <style>
         body {
             background: radial-gradient(circle at top left, #00bcd4, #00008b, #000000);
-            color: #e0ffff; /* Light cyan */
-        }
-        .container {
-            border: 2px solid #00bcd4; /* Cyan borders for the containers */
+            color: #e0ffff;
         }
         html {
-            scroll-behavior: smooth; /* Enables smooth scrolling */
+            scroll-behavior: smooth;
+        }
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #1e293b;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 500px;
+        }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
         }
     </style>
 </head>
 <body class="bg-gray-100">
 
-    <!-- Navbar -->
     <nav class="text-white">
         <div class="mx-auto flex items-center justify-between px-4 py-3">
             <a href="#" class="text-2xl font-bold text-white">Plinko</a>
-            <!-- Hamburger Button -->
             <button id="menu-toggle" class="text-white lg:hidden focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            <!-- Navbar Links -->
             <div id="navbar" class="hidden lg:flex flex-col lg:flex-row lg:items-center lg:space-x-8 w-full lg:w-auto mt-4 lg:mt-0">
                 <a href="#home" class="block px-3 py-2 hover:bg-blue-700 rounded-lg text-white">Hjem</a>
                 <a href="#calculators" class="block px-3 py-2 hover:bg-blue-700 rounded-lg text-white">Kalkulatorer</a>
@@ -39,10 +53,9 @@
         </div>
     </nav>
 
-    <!-- Header Section -->
     <header class="mx-auto py-16 px-4 flex flex-col lg:flex-row items-center">
         <div class="lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0">
-            <h1 class="text-4xl lg:text-5xl font-extrabold">Smarte råd for smarte folk</h1>
+            <h1 class="text-4xl lg:text-5xl font-extrabold">Smarte råd for Smarte folk</h1>
             <p class="mt-4 text-lg text-gray-200">Vi tilbyr skreddersydde kalkulatorer og verktøy for å hjelpe deg med å ta informerte økonomiske beslutninger.</p>
         </div>
         <div class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center">
@@ -50,11 +63,9 @@
         </div>
     </header>
 
-    <!-- Stats Section -->
     <section class="w-screen text-white py-12">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-wrap justify-center gap-6">
-                <!-- First Stat -->
                 <div class="bg-blue-600 p-6 text-center shadow-lg rounded-lg w-full sm:w-1/2 lg:w-1/3">
                     <h3 class="text-4xl font-bold mb-2 hover:translate-y-1 transition-all">Over 100k</h3>
                     <p class="text-base font-semibold text-gray-300">Brukere</p>
@@ -62,7 +73,6 @@
                         Basert på <span class="text-yellow-300">50k+ vurderinger</span>
                     </div>
                 </div>
-                <!-- Second Stat -->
                 <div class="bg-blue-600 p-6 text-center shadow-lg rounded-lg w-full sm:w-1/2 lg:w-1/3">
                     <h3 class="text-4xl font-bold mb-2 hover:translate-y-1 transition-all">4.8</h3>
                     <p class="text-base font-semibold text-gray-300">Gjennomsnittlig Vurdering</p>
@@ -70,7 +80,6 @@
                         Basert på <span class="text-yellow-300">50k+ vurderinger</span>
                     </div>
                 </div>
-                <!-- Third Stat -->
                 <div class="bg-blue-600 p-6 text-center shadow-lg rounded-lg w-full sm:w-1/2 lg:w-1/3">
                     <h3 class="text-4xl font-bold mb-2 hover:translate-y-1 transition-all">99%</h3>
                     <p class="text-base font-semibold text-gray-300">Tilfredshet</p>
@@ -82,13 +91,11 @@
         </div>
     </section>
 
-    <!-- Calculator Section -->
     <section id="calculators" class="mx-auto py-12 px-4">
         <header class="text-center mb-8">
             <p class="text-gray-200 mt-2 font-bold">Utforsk</p>
             <h2 class="text-3xl font-bold text-white">Våre Kalkulatorer</h2>
         </header>
-        
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="bg-blue-600 p-6 shadow rounded-lg text-center border-2 border-cyan-300">
                 <img src="https://via.placeholder.com/150" alt="Sparekonto" class="mx-auto rounded mb-4">
@@ -96,21 +103,18 @@
                 <p class="mt-2 text-gray-200">Beregn fremtidige renter og gevinster på sparekontoen din.</p>
                 <p class="text-cyan-200 font-semibold mt-4 cursor-pointer">Les mer</p>
             </div>
-            
             <div class="bg-blue-600 p-6 shadow rounded-lg text-center border-2 border-cyan-300">
                 <img src="https://via.placeholder.com/150" alt="Boliglån" class="mx-auto rounded mb-4">
                 <h3 class="text-xl font-bold text-white">Boliglån Kalkulator</h3>
                 <p class="mt-2 text-gray-200">Se hvor mye boliglånet ditt vil koste over tid.</p>
                 <p class="text-cyan-200 font-semibold mt-4 cursor-pointer">Les mer</p>
             </div>
-            
             <div class="bg-blue-600 p-6 shadow rounded-lg text-center border-2 border-cyan-300">
                 <img src="https://via.placeholder.com/150" alt="Forbrukslån" class="mx-auto rounded mb-4">
                 <h3 class="text-xl font-bold text-white">Forbrukslån Kalkulator</h3>
                 <p class="mt-2 text-gray-200">Få full oversikt over hva et forbrukslån vil koste deg.</p>
                 <p class="text-cyan-200 font-semibold mt-4 cursor-pointer">Les mer</p>
             </div>
-
             <div class="bg-blue-600 p-6 shadow rounded-lg text-center border-2 border-cyan-300">
                 <img src="https://via.placeholder.com/150" alt="Pensjonssparing" class="mx-auto rounded mb-4">
                 <h3 class="text-xl font-bold text-white">Pensjonssparing</h3>
@@ -120,27 +124,29 @@
         </div>
     </section>
 
-        <!-- Footer Section -->
-    <footer class="bg-blue-600 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center flex-wrap">
-                <!-- Footer Text -->
-                <div class="text-center md:text-left">
-                    <p class="text-lg font-semibold">Plinko - Smarte Finansielle Verktøy</p>
-                    <p class="mt-2 text-gray-300">© 2024 All Rights Reserved</p>
-                </div>
-            </div>
+    <header class="py-12 text-center">
+        <h1 class="text-4xl font-bold text-white">Om Oss</h1>
+        <p class="mt-4 text-lg text-gray-200">Lær mer om teamet og hva som driver oss</p>
+    </header>
+
+    <section class="container mx-auto px-4 py-12 grid grid-cols-1 gap-6">
+        <div class="bg-blue-600 p-6 shadow rounded-lg text-left">
+            <h3 class="text-xl font-bold text-white">Vårt Oppdrag</h3>
+            <p class="mt-2 text-gray-200">Å levere pålitelige finansielle verktøy og råd til alle.</p>
         </div>
+        <div class="bg-blue-600 p-6 shadow rounded-lg text-left">
+            <h3 class="text-xl font-bold text-white">Våre Verdier</h3>
+            <p class="mt-2 text-gray-200">Integritet, tilgjengelighet og innovasjon.</p>
+        </div>
+        <div class="bg-blue-600 p-6 shadow rounded-lg text-left">
+            <h3 class="text-xl font-bold text-white">Vår Historie</h3>
+            <p class="mt-2 text-gray-200">Fra en liten idé til en plattform med 100k+ brukere.</p>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 py-6 text-center text-gray-200">
+        <p>&copy; 2024 Plinko. Alle rettigheter forbeholdt.</p>
     </footer>
-
-
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const navbar = document.getElementById('navbar');
-
-        menuToggle.addEventListener('click', () => {
-            navbar.classList.toggle('hidden');
-        });
-    </script>
+    <script src="indexScript.js"></script>
 </body>
 </html>
