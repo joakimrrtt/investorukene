@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparekalkulator</title>
+</head>
+<body>
+
+    <form>
+        <label for="startamount">Startbeløp (kr): </label>
+        <input type="text" id="startamount" value="">
+    </form>
+
+    <form>
+        <label for="years">Antall år: </label>
+        <input type="text" id="years" value="">
+    </form>
+
+    <form>
+        <label for="interest">Årlig Rente (%): </label> 
+        <input type="text" id="interest" value="">
+    </form>
+
+    <form>
+        <label for="monthlydeposit">Månedlig Innskudd (kr): </label> 
+        <input type="text" id="monthlydeposit" value="">
+    </form>
+
+    <button id="submit" onclick="submitInfo()">Beregn</button>
+
+    <p id="results"></p>    
+
+    <script src="script.js"></script>
+</body>
+</html>
