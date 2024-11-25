@@ -1,5 +1,4 @@
 
-
 function submitInfo() {
 
     let interestChecked = document.getElementById("boolinterest").checked;
@@ -14,6 +13,8 @@ function submitInfo() {
     calculate(goalValue, startValue, timeValue, interestValue, interestChecked);
 }
 
+
+//Ikke ferdig med renters rente
 function calculate(goal, start, time, interest, isChecked) {
     if (start > goal){
         displayResult("Vennligst oppgi gyldig informasjon (sparemålet er større enn nåværende besparelser)")
