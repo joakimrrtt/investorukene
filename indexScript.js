@@ -51,10 +51,6 @@ function calculateLoan() {
     displayResult(`Din månedlige betaling er: ${monthlyPayment.toFixed(2)} kr.`);
 }
 
-function displayResult(message) {
-    document.getElementById('results').innerText = message;
-}
-
 
 
 
