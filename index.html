@@ -33,11 +33,20 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.7);
         }
+        #navbar {
+            background-color: transparent; /* Default background */
+            z-index: 50; /* Ensure it stays on top */
+        }
+
+        #navbar.scrolled {
+            background-color: #1e3a8a; /* Blue background when scrolled */
+        }
+
     </style>
 </head>
 <body class="bg-gray-100">
 
-    <nav class="text-white">
+    <nav id="navbar" class="text-white fixed top-0 left-0 w-full transition-all duration-300">
         <div class="mx-auto flex items-center justify-between px-4 py-3">
             <a href="#" class="text-2xl font-bold text-white">Plinko</a>
             <button id="menu-toggle" class="text-white lg:hidden focus:outline-none">
@@ -45,7 +54,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            <div id="navbar" class="hidden lg:flex flex-col lg:flex-row lg:items-center lg:space-x-8 w-full lg:w-auto mt-4 lg:mt-0">
+            <div id="navbar-menu" class="hidden lg:flex flex-col lg:flex-row lg:items-center lg:space-x-8 w-full lg:w-auto mt-4 lg:mt-0">
                 <a href="#home" class="block px-3 py-2 hover:bg-blue-700 rounded-lg text-white">Hjem</a>
                 <a href="#calculators" class="block px-3 py-2 hover:bg-blue-700 rounded-lg text-white">Kalkulatorer</a>
                 <a href="#omoss" class="block px-3 py-2 hover:bg-blue-700 rounded-lg text-white">Om Oss</a>
@@ -53,30 +62,46 @@
         </div>
     </nav>
 
-    <header class="mx-auto py-16 px-4 flex flex-col lg:flex-row items-center">
-        <div class="lg:w-1/2 text-center lg:text-left lg:mb-0">
-            <h1 class="text-4xl lg:text-5xl font-extrabold text-white">Ta Kontroll over Økonimien din som en Proff !</h1>
-            <p class="mt-4 text-lg text-gray-200 max-w-xl mx-auto lg:mx-0">Vi tilbyr skreddersydde kalkulatorer og verktøy for å hjelpe deg med å ta informerte økonomiske beslutninger. Vi tilbyr skreddersydde kalkulatorer og verktøy for å hjelpe deg med å ta informerte økonomiske beslutninger.</p>
-            
-            <!-- Flex container for the 3 items, evenly spaced -->
-            <div class="mt-8 flex justify-between gap-6 opacity-50">
-                <div class="text-white font-semibold py-2 px-4">
-                    <p>Sponsor 1</p>
-                </div>
-                <div class="text-white font-semibold py-2 px-4">
-                    <p>Sponsor 2</p>
-                </div>
-                <div class="text-white font-semibold py-2 px-4">
-                    <p>Sponsor 3</p>
-                </div>
+
+<header class="mx-auto py-16 px-4 ml-8 flex flex-col lg:flex-row items-center text-black">
+    <div class="lg:w-1/2 text-center lg:text-left lg:mb-0">
+        <h1 class="text-4xl lg:text-5xl font-extrabold text-white">Ta Kontroll over Økonimien din som en Proff!</h1>
+        <p class="mt-4 text-lg text-gray-200 max-w-xl mx-auto lg:mx-0">Vi tilbyr skreddersydde kalkulatorer og verktøy for å hjelpe deg med å ta informerte økonomiske beslutninger.</p>
+        
+        <div class="mt-8 flex justify-between gap-6 opacity-50">
+            <div class="text-white font-semibold py-2 px-4">
+                <p>Sponsor 1</p>
+            </div>
+            <div class="text-white font-semibold py-2 px-4">
+                <p>Sponsor 2</p>
+            </div>
+            <div class="text-white font-semibold py-2 px-4">
+                <p>Sponsor 3</p>
             </div>
         </div>
+    </div>
 
+    <div class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-full lg:w-3/4">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Lånkalkulator</h2>
+            <form onsubmit="return false;">
+                <label for="startamount" class="block text-gray-700 font-medium">Lån (kr):</label>
+                <input type="number" id="startamount" class="w-full border rounded-lg px-3 py-2 mb-4" placeholder="Eks: 100000">
 
-        <div class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUv0vHKb-LEEILBfXZJFosCeIhW-gH31wiNw&s" alt="Finansielle Verktøy" class="rounded-lg shadow-lg w-full lg:w-3/4">
+                <label for="time" class="block text-gray-700 font-medium">Løpetid (måneder):</label>
+                <input type="number" id="time" class="w-full border rounded-lg px-3 py-2 mb-4" placeholder="Eks: 12">
+
+                <label for="interest" class="block text-gray-700 font-medium">Årlig Rente (%):</label>
+                <input type="number" id="interest" class="w-full border rounded-lg px-3 py-2 mb-4" placeholder="Eks: 5">
+
+                <button type="button" id="submit" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg w-full" onclick="calculateLoan()">Beregn</button>
+            </form>
+            <p id="results" class="mt-4 text-gray-800"></p>
         </div>
-    </header>
+    </div>
+</header>
+
+
 
     <section id="calculators" class="mx-auto py-12 px-4">
         <header class="text-center mb-8">
