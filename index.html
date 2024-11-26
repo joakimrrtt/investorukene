@@ -65,8 +65,8 @@
 
 <header class="mx-auto py-16 px-4 ml-8 flex flex-col lg:flex-row items-center text-black">
     <div class="lg:w-1/2 text-center lg:text-left lg:mb-0">
-        <h1 class="text-4xl lg:text-5xl font-extrabold text-white">Ta Kontroll over Økonimien din som en Proff!</h1>
-        <p class="mt-4 text-lg text-gray-200 max-w-xl mx-auto lg:mx-0">Vi tilbyr skreddersydde kalkulatorer og verktøy for å hjelpe deg med å ta informerte økonomiske beslutninger.</p>
+        <h1 class="text-4xl lg:text-7xl font-extrabold text-white">Ta Kontroll over Økonimien din som en Proff!</h1>
+        <p class="mt-4 text-xl text-gray-200 max-w-xl mx-auto lg:mx-0">Vi tilbyr skreddersydde kalkulatorer og verktøy for å hjelpe deg med å ta informerte økonomiske beslutninger.</p>
         
         <div class="mt-8 flex justify-between gap-6 opacity-50">
             <div class="text-white font-semibold py-2 px-4">
@@ -93,8 +93,6 @@
 
                 <label for="interest" class="block text-gray-700 font-medium">Årlig Rente (%):</label>
                 <input type="number" id="interest" class="w-full border rounded-lg px-3 py-2 mb-4" placeholder="Eks: 5">
-
-                <button type="button" id="submit" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg w-full" onclick="calculateLoan()">Beregn</button>
             </form>
             <p id="results" class="mt-4 text-gray-800"></p>
         </div>
@@ -113,31 +111,31 @@
                 <img src="https://via.placeholder.com/150" alt="Sparekonto" class="mx-auto rounded mb-4">
                 <h3 class="text-xl font-bold text-white">Sparekonto Kalkulator</h3>
                 <p class="mt-2 text-gray-200">Beregn fremtidige renter og gevinster på sparekontoen din.</p>
-                <p class="text-cyan-200 font-semibold mt-4 cursor-pointer">Les mer</p>
+                <a class="text-cyan-200 font-semibold mt-4 cursor-pointer" href="kalkulator.html">Les mer</a>
             </div>
             <div class="bg-blue-600 p-6 shadow rounded-lg text-center">
                 <img src="https://via.placeholder.com/150" alt="Boliglån" class="mx-auto rounded mb-4">
                 <h3 class="text-xl font-bold text-white">Boliglån Kalkulator</h3>
                 <p class="mt-2 text-gray-200">Se hvor mye boliglånet ditt vil koste over tid.</p>
-                <p class="text-cyan-200 font-semibold mt-4 cursor-pointer">Les mer</p>
+                <a class="text-cyan-200 font-semibold mt-4 cursor-pointer" href="kalkulator.html">Les mer</a>
             </div>
             <div class="bg-blue-600 p-6 shadow rounded-lg text-center">
                 <img src="https://via.placeholder.com/150" alt="Forbrukslån" class="mx-auto rounded mb-4">
                 <h3 class="text-xl font-bold text-white">Forbrukslån Kalkulator</h3>
                 <p class="mt-2 text-gray-200">Få full oversikt over hva et forbrukslån vil koste deg.</p>
-                <p class="text-cyan-200 font-semibold mt-4 cursor-pointer">Les mer</p>
+                <a class="text-cyan-200 font-semibold mt-4 cursor-pointer" href="kalkulator.html">Les mer</a>
             </div>
             <div class="bg-blue-600 p-6 shadow rounded-lg text-center">
                 <img src="https://via.placeholder.com/150" alt="Pensjonssparing" class="mx-auto rounded mb-4">
                 <h3 class="text-xl font-bold text-white">Pensjonssparing</h3>
                 <p class="mt-2 text-gray-200">Planlegg pensjonen din med våre enkle verktøy.</p>
-                <p class="text-cyan-200 font-semibold mt-4 cursor-pointer">Les mer</p>
+                <a class="text-cyan-200 font-semibold mt-4 cursor-pointer" href="kalkulator.html">Les mer</a>
             </div>
         </div>
     </section>
 
 <section class="w-screen text-white py-12 flex items-center justify-center">
-    <div class="max-w-7xl mx-auto flex flex-wrap lg:flex-nowrap items-center gap-6">
+    <div class="max-w-7xl mx-auto flex flex-wrap lg:flex-nowrap items-start gap-16">
         
         <!-- Left Text Section with Company Facts -->
         <div class="w-full lg:w-1/3 text-left">
@@ -162,26 +160,29 @@
         </div>
         
         <!-- Right Containers -->
-        <div class="flex flex-wrap justify-start gap-6 w-full lg:w-2/3">
-            <div class="bg-blue-800 p-6 text-center shadow-lg rounded-lg w-full sm:w-1/2 lg:w-1/3">
-                <h3 class="text-4xl font-bold mb-2 hover:translate-y-1 transition-all">Over 100k</h3>
-                <p class="text-base font-semibold text-gray-300">Brukere</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-10 w-full lg:w-2/3">
+            <div class="bg-blue-800 p-6 text-center shadow-lg rounded-lg">
+                <h3 class="text-4xl font-bold mb-2 hover:translate-y-1 transition-all">99%</h3>
+                <p class="text-base font-semibold text-gray-300">Tilfredshet</p>
+                <div class="mt-2 text-xs text-gray-400">
+                    Basert på <span class="text-yellow-300">50k+ vurderinger</span>
+                </div>
             </div>
-            <div class="bg-blue-800 p-6 text-center shadow-lg rounded-lg w-full sm:w-1/2 lg:w-1/3">
+            <div class="bg-blue-800 p-6 text-center shadow-lg rounded-lg">
                 <h3 class="text-4xl font-bold mb-2 hover:translate-y-1 transition-all">4.8</h3>
                 <p class="text-base font-semibold text-gray-300">Gjennomsnittlig Vurdering</p>
                 <div class="mt-2 text-xs text-gray-400">
                     Basert på <span class="text-yellow-300">50k+ vurderinger</span>
                 </div>
             </div>
-            <div class="bg-blue-800 p-6 text-center shadow-lg rounded-lg w-full sm:w-1/2 lg:w-1/3">
+            <div class="bg-blue-800 p-6 text-center shadow-lg rounded-lg">
                 <h3 class="text-4xl font-bold mb-2 hover:translate-y-1 transition-all">99%</h3>
                 <p class="text-base font-semibold text-gray-300">Tilfredshet</p>
                 <div class="mt-2 text-xs text-gray-400">
                     Basert på <span class="text-yellow-300">50k+ vurderinger</span>
                 </div>
             </div>
-            <div class="bg-blue-800 p-6 text-center shadow-lg rounded-lg w-full sm:w-1/2 lg:w-1/3">
+            <div class="bg-blue-800 p-6 text-center shadow-lg rounded-lg">
                 <h3 class="text-4xl font-bold mb-2 hover:translate-y-1 transition-all">99%</h3>
                 <p class="text-base font-semibold text-gray-300">Tilfredshet</p>
                 <div class="mt-2 text-xs text-gray-400">
@@ -192,37 +193,133 @@
     </div>
 </section>
 
-<header id="omoss" class="text-center">
-    <p class="mt-4 text-lg text-gray-200 font-bold">Les</p>
-    <h1 class="text-4xl font-bold text-white">Om Oss</h1>
+<section class="w-screen text-white py-12 flex items-center justify-center">
+    <div class="max-w-7xl mx-auto flex flex-wrap lg:flex-nowrap items-start gap-16">
+        
+        <!-- Left Text Section with Forum Illustration -->
+        <div class="w-full lg:w-1/3 text-left">
+            <h1 class="text-3xl font-bold mb-4">Forum: Del og Lær</h1>
+            <p class="text-gray-300 mb-6">
+            Bli med i vår diskusjon! I vårt forum kan du dele erfaringer, stille spørsmål og få råd fra andre brukere om økonomi og finans. Sammen bygger vi et fellesskap av kunnskap og støtte.
+            </p>
+            <div class="mt-8 space-y-3">
+                <div class="flex items-center">
+                    <div class="h-5 w-1 bg-blue-500 mr-3"></div>
+                    <p class="text-sm text-white">Over 50 000 aktive deltakere.</p>
+                </div>
+                <div class="flex items-center">
+                    <div class="h-5 w-1 bg-blue-500 mr-3"></div>
+                    <p class="text-sm text-white">Diskusjoner om lån, sparing, investering, og mer.</p>
+                </div>
+                <div class="flex items-center">
+                    <div class="h-5 w-1 bg-blue-500 mr-3"></div>
+                    <p class="text-sm text-white">Få ekspertråd fra økonomiske rådgivere.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Containers with Forum Illustration -->
+        <div class="w-full lg:w-2/3">
+            <div class="bg-blue-800 p-6 shadow-lg rounded-lg text-center">
+                <img src="https://via.placeholder.com/400x300" alt="Forum Illustration" class="mx-auto rounded-lg mb-4">
+                <h3 class="text-2xl font-bold mb-4 text-white">Delta i Forumet</h3>
+                <p class="text-lg text-gray-300 mb-6">
+                    Våre brukere deler aktivt sine erfaringer, gir råd, og diskuterer ulike økonomiske emner. Kom og vær en del av samtalen!
+                </p>
+                <a href="#forum" class="text-cyan-200 font-semibold mt-4 inline-block hover:underline cursor-pointer">Gå til Forum</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<header id="#omoss" class="text-center mb-8">
+    <p class="text-blue-500 mt-2 font-bold">Les</p>
+    <h2 class="text-3xl font-bold text-white">Om Oss</h2>
 </header>
 
-<section class="container mx-auto px-4 py-12 grid grid-row-3 gap-6">
-    <div class="col-span-2 flex flex-row gap-4">
-        <div class="bg-blue-600 p-4 shadow rounded-lg text-left cursor-pointer" onclick="fillContent('Vårt Oppdrag', 'Vi gjør økonomi enkelt og tilgjengelig for alle. Med pålitelige verktøy og råd hjelper vi deg å ta trygge valg og oppnå økonomisk trygghet.', this)">
-            <h3 class="text-lg font-bold text-white">Vårt Oppdrag</h3>
-            <p class="mt-1 text-gray-200">Å levere pålitelige finansielle verktøy og råd til alle.</p>
-        </div>
-        <div class="bg-blue-600 p-4 shadow rounded-lg text-left cursor-pointer" onclick="fillContent('Våre Verdier', 'Integritet, tilgjengelighet og innovasjon står i sentrum for alt vi gjør. Vi jobber for å skape tillit, gjøre økonomi enkelt og utvikle løsninger som hjelper deg å nå dine mål.', this)">
-            <h3 class="text-lg font-bold text-white">Våre Verdier</h3>
-            <p class="mt-1 text-gray-200">Integritet, tilgjengelighet og innovasjon.</p>
-        </div>
-        <div class="bg-blue-600 p-4 shadow rounded-lg text-left cursor-pointer" onclick="fillContent('Vår Historie', 'Det startet som en liten idé, drevet av et ønske om å forenkle økonomi for alle. I dag er vi en pålitelig plattform med over 100 000 brukere verden over – og vi fortsetter å vokse sammen med våre brukere.', this)">
-            <h3 class="text-lg font-bold text-white">Vår Historie</h3>
-            <p class="mt-1 text-gray-200">Fra en liten idé til en plattform med 100k+ brukere.</p>
-        </div>
+<section class="container mx-auto px-4 grid grid-row-3 gap-6">
+  <div class="flex justify-center">
+    <div class="grid grid-cols-3 gap-4">
+      <div class="bg-blue-600 p-4 shadow-lg rounded-lg text-left cursor-pointer transform transition-all duration-300 hover:scale-105 hover:bg-blue-700" 
+           onclick="fillContent('Vårt Oppdrag', 'Vi gjør økonomi enkelt og tilgjengelig for alle. Med pålitelige verktøy og råd hjelper vi deg å ta trygge valg og oppnå økonomisk trygghet.', this)">
+        <h3 class="text-lg font-bold text-white">Vårt Oppdrag</h3>
+        <p class="mt-1 text-gray-200">Å levere pålitelige finansielle verktøy og råd til alle.</p>
+      </div>
+      <div class="bg-blue-600 p-4 shadow-lg rounded-lg text-left cursor-pointer transform transition-all duration-300 hover:scale-105 hover:bg-blue-700" 
+           onclick="fillContent('Våre Verdier', 'Integritet, tilgjengelighet og innovasjon står i sentrum for alt vi gjør. Vi jobber for å skape tillit, gjøre økonomi enkelt og utvikle løsninger som hjelper deg å nå dine mål.', this)">
+        <h3 class="text-lg font-bold text-white">Våre Verdier</h3>
+        <p class="mt-1 text-gray-200">Integritet, tilgjengelighet og innovasjon.</p>
+      </div>
+      <div class="bg-blue-600 p-4 shadow-lg rounded-lg text-left cursor-pointer transform transition-all duration-300 hover:scale-105 hover:bg-blue-700" 
+           onclick="fillContent('Vår Historie', 'Det startet som en liten idé, drevet av et ønske om å forenkle økonomi for alle. I dag er vi en pålitelig plattform med over 100 000 brukere verden over – og vi fortsetter å vokse sammen med våre brukere.', this)">
+        <h3 class="text-lg font-bold text-white">Vår Historie</h3>
+        <p class="mt-1 text-gray-200">Fra en liten idé til en plattform med 100k+ brukere.</p>
+      </div>
     </div>
-    <div class="col-span-1 p-4 text-left" id="dynamic-content">
-        <p class="text-gray-500 italic">Klikk på en boks for mer informasjon.</p>
-    </div>
+  </div>
+  <div class="col-span-1 p-4 text-left" id="dynamic-content">
+    <p class="text-gray-500 italic">Klikk på en boks for mer informasjon.</p>
+  </div>
 </section>
 
 
 
 
 
-    <footer class="bg-gray-900 py-6 text-center text-gray-200">
-        <p>&copy; 2024 Plinko. Alle rettigheter forbeholdt.</p>
+
+
+<footer class="bg-black-900 py-8 text-center text-gray-200">
+        <div class="container mx-auto px-4">
+            <!-- Logo or Name -->
+            <div class="mb-4">
+                <h2 class="text-xl font-bold">Plinko</h2>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="mb-4">
+                <ul class="flex justify-center space-x-4 text-sm">
+                    <li><a href="/about" class="hover:text-gray-400">About Us</a></li>
+                    <li><a href="/services" class="hover:text-gray-400">Services</a></li>
+                    <li><a href="/privacy-policy" class="hover:text-gray-400">Privacy Policy</a></li>
+                    <li><a href="/contact" class="hover:text-gray-400">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="mb-4">
+                <ul class="flex justify-center space-x-6">
+                    <li>
+                        <a href="https://facebook.com/plinko" target="_blank" class="hover:text-gray-400">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/plinko" target="_blank" class="hover:text-gray-400">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com/plinko" target="_blank" class="hover:text-gray-400">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="mb-4">
+                <p class="text-sm">Email: <a href="mailto:support@plinko.com" class="hover:text-gray-400">support@plinko.com</a></p>
+                <p class="text-sm">Phone: <a href="tel:+1234567890" class="hover:text-gray-400">+1 234 567 890</a></p>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-4">
+                <p class="text-xs">&copy; 2024 Plinko. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
     <script src="indexScript.js"></script>
 </body>
