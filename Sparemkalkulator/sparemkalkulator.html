@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparemålskalkulator</title>
+    <script defer src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+    <style>
+        body {
+            background: radial-gradient(circle at top left, #00bcd4, #00008b, #000000);
+            color: #e0ffff;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        #navbar {
+            background-color: transparent;
+            z-index: 50;
+        }
+        #navbar.scrolled {
+            background-color: #1e3a8a;
+        }
+    </style>
+
+<body class="bg-gray-100 font-sans leading-relaxed tracking-wide">
+    <!-- Navbar -->
+    <nav id="navbar" class="text-white fixed top-0 left-0 w-full transition-all duration-300">
+        <div class="mx-auto flex items-center justify-between px-4 py-3">
+            <a href="#" class="text-2xl font-bold text-white">Plinko</a>
+            <button id="menu-toggle" class="text-white lg:hidden focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <div id="navbar-menu" class="hidden lg:flex flex-col lg:flex-row lg:items-center lg:space-x-8 w-full lg:w-auto mt-4 lg:mt-0">
+                <a href="#home" class="block px-3 py-2 hover:bg-blue-700 rounded-lg text-white">Hjem</a>
+                <a href="#calculators" class="block px-3 py-2 hover:bg-blue-700 rounded-lg text-white">Kalkulatorer</a>
+                <a href="#omoss" class="block px-3 py-2 hover:bg-blue-700 rounded-lg text-white">Om Oss</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto flex flex-col lg:flex-row mt-8 lg:mt-16 gap-8 px-4 lg:px-0">
+        <!-- Left Side - Informational Section -->
+        <div class="lg:w-1/2 p-6">
+            <h2 class="text-2xl font-bold mb-4 text-white">Planlegg dine sparemål enkelt og effektivt</h2>
+            <p class="text-gray-300 mb-4">
+                Denne kalkulatoren hjelper deg med å nå dine sparemål ved å beregne månedlige innskudd. Det er viktig å ha en klar spareplan for å sikre økonomisk stabilitet.
+            </p>
+            <h3 class="text-xl font-semibold mb-2 text-white">Slik bruker du kalkulatoren:</h3>
+            <ul class="list-disc list-inside text-gray-300 mb-4">
+                <li>Angi målet ditt: hvor mye du ønsker å spare totalt.</li>
+                <li>Oppgi hvor mye du allerede har spart.</li>
+                <li>Velg hvor lang tid du ønsker å bruke på å nå målet ditt.</li>
+                <li>Klikk "Beregn" for å se resultatet.</li>
+            </ul>
+            <p class="text-gray-300">
+                Bruk denne kalkulatoren regelmessig for å justere sparingen din og holde deg på rett spor.
+            </p>
+        </div>
+
+        <!-- Right Side - Savings Calculator -->
+        <div class="lg:w-1/2 flex justify-center">
+            <div class="bg-white rounded-lg shadow-lg p-6 w-full lg:w-3/4">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">Sparemålskalkulator</h2>
+                <form onsubmit="return false;">
+                    <label for="goalamount" class="block text-gray-700 font-medium">Målbeløp (kr):</label>
+                    <input type="number" id="goalamount" class="w-full border rounded-lg px-3 py-2 mb-4 text-gray-800" placeholder="Eks: 50000">
+
+                    <label for="startamount" class="block text-gray-700 font-medium">Nåværende besparelser (kr):</label>
+                    <input type="number" id="startamount" class="w-full border rounded-lg px-3 py-2 mb-4 text-gray-800" placeholder="Eks: 10000">
+
+                    <label for="timeframe" class="block text-gray-700 font-medium">Tid (måneder):</label>
+                    <input type="number" id="timeframe" class="w-full border rounded-lg px-3 py-2 mb-4 text-gray-800" placeholder="Eks: 12">
+
+                    <button type="button" id="submit" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg w-full" onclick="submitInfo()">Beregn</button>
+                </form>
+                <p id="results" class="mt-4 text-gray-800"></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+<footer class="bg-black-900 py-8 text-center text-gray-200">
+    <div class="container mx-auto px-4">
+        <!-- Logo or Name -->
+        <div class="mb-4">
+            <h2 class="text-xl font-bold">Plinko</h2>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="mb-4">
+            <ul class="flex justify-center space-x-4 text-sm">
+                <li><a href="/about" class="hover:text-gray-400">About Us</a></li>
+                <li><a href="/services" class="hover:text-gray-400">Services</a></li>
+                <li><a href="/privacy-policy" class="hover:text-gray-400">Privacy Policy</a></li>
+                <li><a href="/contact" class="hover:text-gray-400">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="mb-4">
+            <ul class="flex justify-center space-x-6">
+                <li>
+                    <a href="https://facebook.com/plinko" target="_blank" class="hover:text-gray-400">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/plinko" target="_blank" class="hover:text-gray-400">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                </li>
+                <li>
+                    <a href="https://instagram.com/plinko" target="_blank" class="hover:text-gray-400">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="mb-4">
+            <p class="text-sm">Email: <a href="mailto:support@plinko.com" class="hover:text-gray-400">support@plinko.com</a></p>
+            <p class="text-sm">Phone: <a href="tel:+1234567890" class="hover:text-gray-400">+1 234 567 890</a></p>
+        </div>
+
+        <!-- Copyright -->
+        <div class="mt-4">
+            <p class="text-xs">&copy; 2024 Plinko. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</html>
