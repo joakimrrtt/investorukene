@@ -84,20 +84,11 @@ function calculateLoan() {
 }
 
 function displayResult(message) {
-    const resultElement = document.getElementById('results');
-    resultElement.innerText = ''; // Clear the result first
-
-    // Add the fade-in class for the animation
-    resultElement.classList.remove('fade-in'); // Remove class if it already exists
-    void resultElement.offsetWidth; // Trigger a reflow to restart the animation
-    resultElement.classList.add('fade-in'); // Apply the fade-in animation class
-
-    resultElement.innerText = message; // Set the result text
+    document.getElementById('results').innerText = message;
 }
 
-function startRandomCycle() {
-    setInterval(calculateLoan, 5000); // Repeats every 5 seconds
-}
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     // Start the cycle and the first calculation immediately when the page loads
