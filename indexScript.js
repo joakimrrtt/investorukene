@@ -96,7 +96,7 @@ function displayResult(message) {
 }
 
 function startRandomCycle() {
-    setInterval(calculateLoan, 5000); // Repeats every 5 seconds
+    setInterval(calculateLoan, 2500); // Repeats every 5 seconds
 }
 
 document.addEventListener("DOMContentLoaded", function () {
